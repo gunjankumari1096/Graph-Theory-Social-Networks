@@ -1,0 +1,125 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+
+\title{\LARGE \bf Exploring Applications of Graph Theory in Social Network Analysis}
+
+\author{
+    \IEEEauthorblockN{Gunjan Kumari}
+    \IEEEauthorblockA{
+        B.Sc (Hons.) Mathematics \\
+        Shaheed Rajguru College of Applied Sciences for Women \\
+        University of Delhi \\
+        \href{mailto:gunjankumari1096@gmail.com}{gunjankumari1096@gmail.com}
+    }
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Social networks are among the most complex and dynamic systems today. Graph theory provides a natural framework for modeling such networks, where users are nodes and interactions are edges. This paper explores key graph-based concepts—centrality, community detection, clustering—and applies them to real-world Facebook data. We used Python's NetworkX and Gephi for analysis and visualization, uncovering behavioral and structural insights. Applications in influence detection, recommendation, and security are also discussed.
+\end{abstract}
+
+\section{Introduction}
+With billions of active users, platforms like Facebook, Instagram, and Twitter create massive networks of interactions. Understanding these relationships is vital for marketing, recommendation engines, fraud detection, and more.
+
+Graph theory, a branch of mathematics, allows us to represent these platforms as graphs: each user becomes a node and every interaction forms an edge. Analyzing these structures enables identification of key influencers, community clusters, and hidden patterns.
+
+This paper presents how graph theory can be applied practically to a real-world dataset and explores advanced metrics such as betweenness centrality, modularity-based clustering, and the small-world phenomenon.
+
+\section{Graph Theory Concepts}
+Let \( G = (V, E) \) be a graph with nodes \( V \) and edges \( E \).
+
+\subsection{Degree Centrality}
+Measures direct influence—number of connections.
+
+\subsection{Closeness Centrality}
+Measures average distance to all nodes. High values suggest efficiency in spreading information.
+
+\subsection{Betweenness Centrality}
+Identifies bridge nodes—those often on the shortest paths between others.
+
+\subsection{Clustering Coefficient}
+Quantifies how tightly a node's neighbors are connected.
+
+\subsection{Modularity}
+Used for community detection—measures the strength of division of a network into modules.
+
+\section{Dataset and Tools}
+We used the SNAP ego-Facebook dataset:
+\begin{itemize}
+  \item \textbf{Nodes:} 4,039 users
+  \item \textbf{Edges:} 88,234 friendships
+  \item \textbf{Graph Type:} Undirected, unweighted
+\end{itemize}
+
+\textbf{Tools:}
+\begin{itemize}
+  \item \textbf{Python (NetworkX):} Metric computation
+  \item \textbf{Gephi:} Community visualization and layout
+  \item \textbf{Matplotlib:} Distribution plots
+\end{itemize}
+
+\section{Methodology}
+We constructed a graph using NetworkX and calculated centrality, clustering, and path-based metrics.
+
+\section{Results and Discussion}
+\subsection{Top Influencers}
+\begin{itemize}
+  \item User 107: Degree centrality = 0.028
+  \item User 121: Betweenness centrality = 0.38
+\end{itemize}
+
+Gephi’s modularity algorithm detected 8 communities. Most users were clustered into small subgroups with internal cohesion.
+\subsection{Degree Distribution}
+We observed a power-law-like distribution typical of social networks.
+
+\subsection{Average Path and Clustering}
+\begin{itemize}
+  \item Average path length: 3.5
+  \item Average clustering coefficient: 0.61
+\end{itemize}
+\section{Applications}
+\begin{itemize}
+  \item \textbf{Marketing:} Target high-degree central users
+  \item \textbf{Security:} Monitor bridge users (high betweenness)
+\end{itemize}
+
+\section{Conclusion and Future Work}
+Graph theory provides a powerful lens to examine social networks. From centrality to clustering, each metric uncovers new behavioral or structural information.
+
+In future work, we aim to:
+\begin{itemize}
+  \item Apply sentiment analysis to edge weights.
+  \item Use temporal graphs for evolving networks.
+\end{itemize}
+
+\section*{References}
+\begin{thebibliography}{00}
+\bibitem{newman}
+Newman, M. E. J. (2003). The structure and function of complex networks. \textit{SIAM Review}.
+
+\bibitem{easley}
+Easley, D., \& Kleinberg, J. (2010). \textit{Networks, Crowds, and Markets}. Cambridge University Press.
+\bibitem{snap}
+Jure Leskovec, SNAP Datasets. \url{https://snap.stanford.edu/data/ego-Facebook.html}
+
+\bibitem{networkx}
+NetworkX Documentation. \url{https://networkx.org/}
+
+\bibitem{gephi}
+Gephi Open Graph Platform. \url{https://gephi.org/}
+\end{thebibliography}
+
+\end{document}
+
+  \item Integrate machine learning for predictive modeling.
+  \item \textbf{Recommendation:} Use community info for content suggestion
+
+
+
